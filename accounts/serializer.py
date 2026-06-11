@@ -21,8 +21,8 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
     def create(self,validated_data):
-        password = validated_data.pop("password")
         user = User(**validated_data)
+        password = validated_data.pop("password")
 
         user.set_password("password")
 
@@ -30,3 +30,16 @@ class RegisterSerializer(serializers.ModelSerializer):
 
         return user
     
+    
+class ProfileSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+
+        fields = (
+            "id",
+            "username",
+            "email",
+            "phone",
+            "role"
+        )
