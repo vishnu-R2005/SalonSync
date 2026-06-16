@@ -35,6 +35,12 @@ urlpatterns = [
         "api/services/",
         include("services.urls")
     ),
+    
+    path(
+    "api/appointments/",
+    include("appointments.urls")
+    ),  
+
     path(
         "api/docs/",
         SpectacularSwaggerView.as_view(
