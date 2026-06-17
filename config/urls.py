@@ -40,6 +40,8 @@ urlpatterns = [
     "api/appointments/",
     include("appointments.urls")
     ),  
+    
+    path('api/employees/', include('employees.urls')),
 
     path(
         "api/docs/",
